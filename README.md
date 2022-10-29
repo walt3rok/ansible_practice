@@ -1,0 +1,2 @@
+# ansible_practice
+THIS IS TEST FOR ANSIBLE LEARNING 

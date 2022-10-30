@@ -1,4 +1,2 @@
-# root@127.0.0.1:8998
-# root@127.0.0.1:8990
-# root@127.0.0.1:8991
+127.0.0.1 ansible_connection=ssh ansible_user=root ansible_port=1234
 195.201.56.167 ansible_connection=ssh ansible_user=ubuntu ansible_port=22131

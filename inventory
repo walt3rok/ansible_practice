@@ -1,3 +1,5 @@
 localhost ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=1234 ansible_user=root
 centos_mini_2 ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=4321 ansible_user=root
 centos_mini_3 ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=2345 ansible_user=root
+centos_mini_4 ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=7890 ansible_user=root
+

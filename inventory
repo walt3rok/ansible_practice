@@ -1,5 +1,11 @@
-localhost ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=1234 ansible_user=root
-centos_mini_2 ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=4321 ansible_user=root
-centos_mini_3 ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=2345 ansible_user=root
-centos_mini_4 ansible_host=127.0.0.1 ansible_connection=ssh ansible_port=7890 ansible_user=root
+[web_servers]
+CentOS-Mini-1 ansible_host=127.0.0.1 ansible_port=1234 ansible_user=root 
+CentOS-Mini-2 ansible_host=127.0.0.1 ansible_port=4321 ansible_user=root 
+
+[db_servers]
+CentOS-Mini-3 ansible_host=127.0.0.1 ansible_port=2345 ansible_user=root
+Ubuntu ansible_host=195.201.56.167 ansible_port=20178 ansible_user=ubuntu
+
+[file_servers]
+CentOS-Mini-4 ansible_host=127.0.0.1 ansible_port=7890 ansible_user=root
 

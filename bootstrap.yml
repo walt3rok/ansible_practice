@@ -1,0 +1,45 @@
+---
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: install Updates (CentOS)
+    tags: always,update
+    yum:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: install Updates (Ubuntu)
+    tags: always,update
+    apt:
+      upgrade: dist
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: web_servers
+  become: true
+  tasks:
+
+  - name: create jerry user
+    tags: always,jerry
+    user:
+      name: jerry
+      groups: root
+
+  - name: add ssh key for jerry user
+    tags: always,jerry
+    authorized_key:
+      user: jerry
+      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBKNxiKzQGWYs0oqP4Ri1yVwyLMpHU7pO0px6UQviK+y Amir Default"
+
+  - name: add sudoers file for jerry user
+    tags: always,jerry
+    copy:
+      src: sudoer_jerry
+      dest: /etc/sudoers.d/jerry
+      owner: root
+      group: root
+      remote_src: yes
+

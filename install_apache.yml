@@ -4,17 +4,10 @@
   become: true
   tasks:
 
-  - name: update repository index
+  - name: install apache2 package on CentOS7.6-Minimal, with upgrade latest update with official archive
     yum:
+     name:
+       - "{{ APACHE_PACKAGE }}"
+       - "{{ PHP_PACKAGE }}"
+     state: latest
      update_cache: yes
-    when: ansible_distribution == "CentOS"
-  - name: install apache2 package
-    yum:
-     name: httpd
-     state: latest
-    when: ansible_distribution == "CentOS"
-  - name: add php support for apache
-    yum:
-     name: php
-     state: latest
-    when: ansible_distribution == "CentOS"

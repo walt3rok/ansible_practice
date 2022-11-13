@@ -1,0 +1,5 @@
+- name: add ssh key to jerry user
+  authorized_key:
+    user: jerry
+    key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBKNxiKzQGWYs0oqP4Ri1yVwyLMpHU7pO0px6UQviK+y Amir Default
+
